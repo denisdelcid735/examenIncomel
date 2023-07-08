@@ -1,0 +1,75 @@
+<h1 mat-dialog-title>{{tituloAccion}} Empleado</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formEmpleado">
+        <mat-grid-list cols="1" rowHeight="100px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>DPI</mat-label>
+                    <input matInput formControlName="dpi" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="nombre" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>No. Hijos</mat-label>
+                    <input matInput formControlName="cantidadHijos" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Salario Base</mat-label>
+                    <input matInput formControlName="salarioBase" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Bono decreto</mat-label>
+                    <input matInput formControlName="bonoDecreto" autocomplete="off" [disabled]="true">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>IGSS</mat-label>
+                    <input matInput formControlName="igss" autocomplete="off" [disabled]="true">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>IRTRA</mat-label>
+                    <input matInput formControlName="irtra" autocomplete="off" [disabled]="true">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Bono paternidad</mat-label>
+                    <input matInput formControlName="bonoPaternidad" autocomplete="off" [disabled]="true">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Salario Total</mat-label>
+                    <input matInput formControlName="salarioTotal" autocomplete="off" [disabled]="true">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Salario Liquido</mat-label>
+                    <input matInput formControlName="salarioLiquido" autocomplete="off" [disabled]="true">
+                  </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">Cerrar</button>
+  <button mat-raised-button  color="primary"
+  (click)="addEditEmpleado()"
+  [disabled] ="formEmpleado.invalid">
+    {{botonAccion}}
+</button>
+</div>
